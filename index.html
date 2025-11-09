@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>백수생존기 · NEET Tycoon</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar" role="banner">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">🛋️</span>
+      <h1>백수생존기</h1>
+      <small>NEET Tycoon</small>
+    </div>
+    <nav class="actions">
+      <button id="btn-help" class="btn">게임 방법</button>
+      <button id="btn-save" class="btn">저장</button>
+      <button id="btn-load" class="btn">불러오기</button>
+      <button id="btn-reset" class="btn btn-danger">새로 시작</button>
+    </nav>
+  </header>
+
+  <main class="layout" role="main">
+    <aside class="panel left" aria-label="행동과 장소">
+      <section class="card">
+        <h2>행동</h2>
+        <div id="action-list" class="grid-list" role="group" aria-label="가능한 행동 목록"></div>
+      </section>
+
+      <section class="card">
+        <h2>도시</h2>
+        <div id="place-list" class="grid-list" role="group" aria-label="이동 가능한 장소"></div>
+      </section>
+    </aside>
+
+    <section class="center">
+      <section class="card status">
+        <div class="stats-row">
+          <div class="stat"><span>📅</span><b id="st-day">1일차</b></div>
+          <div class="stat"><span>⏰</span><b id="st-time">08:00</b></div>
+          <div class="stat"><span>💸</span><b id="st-money">₩0</b></div>
+        </div>
+        <div class="bars">
+          <div class="bar">
+            <label for="bar-energy">에너지</label>
+            <progress id="bar-energy" max="100" value="50"></progress>
+          </div>
+          <div class="bar">
+            <label for="bar-mood">기분</label>
+            <progress id="bar-mood" max="100" value="50"></progress>
+          </div>
+        </div>
+        <div class="skills">
+          <div class="skill"><span>🧑‍💻</span>코딩 <b id="sk-code">0</b></div>
+          <div class="skill"><span>🎨</span>디자인 <b id="sk-design">0</b></div>
+          <div class="skill"><span>🗣️</span>커뮤 <b id="sk-talk">0</b></div>
+        </div>
+      </section>
+
+      <section class="card scene" id="scene">
+        <h2 id="scene-title">원룸</h2>
+        <div id="scene-content" class="scene-content">
+          <p>당신의 소박한 원룸이다. 가끔 바람 소리가 창문을 두드린다.</p>
+          <ul class="scene-actions" id="scene-actions"></ul>
+        </div>
+      </section>
+
+      <section class="card log" aria-live="polite">
+        <h2>기록</h2>
+        <div id="log-output"></div>
+      </section>
+    </section>
+
+    <aside class="panel right" aria-label="업적과 고지서">
+      <section class="card">
+        <h2>업적</h2>
+        <ul id="achievements" class="achievements"></ul>
+      </section>
+
+      <section class="card">
+        <h2>고지서</h2>
+        <div class="bills">
+          <div>월세 납부일: <b id="rent-day">7일차</b></div>
+          <div>월세: <b id="rent-amount">₩200</b></div>
+        </div>
+      </section>
+
+      <section class="card help">
+        <h2>도움말</h2>
+        <p>시간·에너지를 관리하며 실력을 키우고 돈을 벌어 월세를 지불하자. 스킬이 높을수록 더 좋은 일자리를 얻을 수 있다.</p>
+      </section>
+    </aside>
+  </main>
+
+  <dialog id="modal" aria-labelledby="modal-title">
+    <form method="dialog" class="modal-card">
+      <h3 id="modal-title">면접</h3>
+      <div id="modal-body"></div>
+      <menu>
+        <button value="cancel" class="btn">닫기</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <footer class="footer">
+    <small>© 2025 백수생존기 — 저장은 브라우저에 보관됩니다.</small>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
